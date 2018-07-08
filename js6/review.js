@@ -30,16 +30,19 @@ const printMyName = name => {
   console.log(name);
 }
 
-// if function body only returns one thing,
-// it can be written more concisely
+// if function body only returns one thing, for example:
 
 // let double = (number) => {
 //   return (number * 2);
 // }
+// console.log(double(2))
+
+
+// it can be written more concisely
 
 let double = number => number * 2;
 
-console.log(mulitply(2))
+console.log(double(2))
 
 //
 // Exports & Imports (Modules)
