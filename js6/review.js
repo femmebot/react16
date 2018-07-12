@@ -62,3 +62,7 @@ import prs from './person.js'
 
 import { baseData } from 'utility.js'   // no default requires named export using curly braces
 import { clean } from 'utility.js'
+
+
+//
+// Destructuring
