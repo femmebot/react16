@@ -68,4 +68,48 @@ import { clean } from 'utility.js'
 
 
 //
+// Understanding classes
+
+class Human {
+  constructor() {
+    this.gender = 'male'
+  }
+  printGender() {
+    console.log(this.gender);
+  }
+}
+class Person extends Human {
+  constructor() {
+    super();
+    this.name = 'Max'
+  }
+
+  printMyName() {
+    console.log(this.name)
+  }
+}
+
+const person = new Person();
+person.printMyName();
+person.printMyGender();
+
+
+
+
+//
+// Classes, Properties and Methods
+
+
+
+//
+// THe Spread and Rest Operator
+
+
+
+//
 // Destructuring
+
+
+
+//
+// Reference and Primitive Types
