@@ -63,6 +63,7 @@ export const baseData = 10;
 import person from './person.js'  // with a default export, it can be named anything
 import prs from './person.js'
 
+<<<<<<< HEAD
 import { baseData } from './utility.js'   // no default requires named export using curly braces
 import { clean } from './utility.js'
 
@@ -185,4 +186,11 @@ console.log(newPerson);
 
 
 // **********************************************
+=======
+import { baseData } from 'utility.js'   // no default requires named export using curly braces
+import { clean } from 'utility.js'
+
+
+//
+>>>>>>> 8e9dcc949a5886428ea994fcec35cbae8bda8faf
 // Destructuring
