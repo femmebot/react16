@@ -82,6 +82,7 @@ class Person extends Human {
   constructor() {
     super();
     this.name = 'Max'
+    this.gender = 'female'
   }
 
   printMyName() {
