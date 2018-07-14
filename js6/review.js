@@ -339,3 +339,28 @@ console.log(num1, num3);
 
 // *********************************************
 // Reference and Primitive Types
+
+// example of primitve type
+const number = 1;
+const num2 = number;
+console.log(num2);  // 1
+
+// example of reference Types
+const person = {
+  name: 'Max'
+};
+const secondPerson = person;
+person.name = 'Manu';
+console.log(secondPerson);  // [object Object]{ name: 'Manu'}
+// changing the value for the copy of the object also changes the value for the reference object
+
+// to copy in an immutable way, use the spread Operator
+const person = {
+  name: 'Max'
+};
+
+const secondPerson = {
+  ...person
+};
+person.name = 'Manu';
+console.log(secondPerson);  // [object Object]{ name: 'Max'}
