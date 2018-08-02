@@ -52,16 +52,11 @@ class App extends Component {
       padding: '6px 12px'
     };
 
-    return (
-      <div className="App">
-        <h1 className="App-title">Welcome to React</h1>
-        <button
-          style={buttonStyle}
-          onClick={this.togglePersonHandler}>Switch Name
-        </button>
+    let persons = null;
 
-      { this.state.showPerson ?
-      <div>
+    if (this.state.showPerson) {
+      persons = (
+        <div>
           <Person
             name={this.state.persons[0].name}
             age={this.state.persons[0].age}/>
@@ -74,11 +69,52 @@ class App extends Component {
           <Person
             name={this.state.persons[2].name}
             age={this.state.persons[2].age}/>
-        </div> : null
-      }
+        </div>
+      );
+    }
+
+    return (
+      <div className="App">
+        <h1 className="App-title">Welcome to React</h1>
+        <button
+          style={buttonStyle}
+          onClick={this.togglePersonHandler}>Toggle Persons
+        </button>
+
+        {persons}
 
       </div>
     );
+
+    // using conditional with ternary expression
+
+    // return (
+    //   <div className="App">
+    //     <h1 className="App-title">Welcome to React</h1>
+    //     <button
+    //       style={buttonStyle}
+    //       onClick={this.togglePersonHandler}>Switch Name
+    //     </button>
+    //
+    //   { this.state.showPerson ?
+    //   <div>
+    //       <Person
+    //         name={this.state.persons[0].name}
+    //         age={this.state.persons[0].age}/>
+    //       <Person
+    //         name={this.state.persons[1].name}
+    //         age={this.state.persons[1].age}
+    //         click={this.switchNameHandler.bind(this, 'Max!')}
+    //         changed={this.nameChangedHandler}>My hobbies: Racing
+    //         </Person>
+    //       <Person
+    //         name={this.state.persons[2].name}
+    //         age={this.state.persons[2].age}/>
+    //     </div> : null
+    //   }
+    //
+    //   </div>
+    // );
 
     // return(React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Hi! Let’s do this!!!')))
   }
