@@ -12,19 +12,6 @@ class App extends Component {
     showPerson: false
   }
 
-  switchNameHandler = (newName) => {
-    // console.log('Was clicked!');
-
-    // use special setState method from Component to update DOM
-    this.setState({
-      persons: [
-        { name: newName, age: 28 },
-        { name: "Manu", age: 29 },
-        { name: "Stephanie", age: 27 }
-      ]
-    })
-  }
-
   togglePersonHandler = () => {
     const doesShow = this.state.showPerson;
     this.setState({showPerson: !doesShow});
@@ -41,6 +28,13 @@ class App extends Component {
     })
   }
 
+  deletePersonHandler = (personIndex) => {
+    console.log('delete handler clicked');
+    const persons = this.state.persons;
+    persons.splice(personIndex, 1);
+    this.setState({persons: persons});
+  }
+
   // bind method preferred over passing anonymous function for performance
   // <button onClick={this.switchNameHandler.bind(this, 'Maximilian')}>Switch Name</button>
 
@@ -49,7 +43,8 @@ class App extends Component {
       backgroundColor: '#0BD',
       borderRadius: '3px',
       border: 'none',
-      padding: '6px 12px'
+      padding: '6px 12px 8px 12px',
+      fontSize: '14px'
     };
 
     let persons = null;
@@ -57,8 +52,10 @@ class App extends Component {
     if (this.state.showPerson) {
       persons = (
         <div>
-          {this.state.persons.map(person => {
+          {this.state.persons.map((person, index) => {
+              // alternative; use bind.this index method instead of anonymous function
               return <Person
+                click = {() => this.deletePersonHandler(index)}
                 name = {person.name}
                 age = {person.age}/>
             })
