@@ -1,0 +1,26 @@
+.App {
+  margin: 60px auto;
+  max-width: 480px;
+  text-align: left;
+  padding: 0 30px;
+}
+
+.App p,
+.App ol li {
+  font-size: 15px;
+  line-height: 1.4;
+  padding-bottom: 6px;
+}
+
+.App code {
+  padding: 1px 4px;
+  background-color: #eee;
+  border-radius: 3px;
+  margin: 0 2px;
+  display: inline-block;
+  min-width: 30px;
+}
+
+.App input {
+  padding: 6px 20px;
+}
