@@ -20,10 +20,23 @@ class App extends Component {
     });
   }
 
+  removeCharacterHandler = (charIndex) => {
+
+    const text = this.state.textString.split('');
+    text.splice(charIndex, 1);
+    const updatedText = text.join('');
+    this.setState({textString: updatedText});
+
+  }
+
   render() {
 
-    let charArray = this.state.textString.split('').map(ch => {
-      return <CharComponent character = {ch} />;
+    let charArray = this.state.textString.split('').map((ch, charIndex) => {
+      return <CharComponent
+        character = {ch}
+        key = {charIndex}
+        click = {() => this.removeCharacterHandler(charIndex)}
+        />;
     });
 
     return (
