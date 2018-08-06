@@ -10,17 +10,28 @@
   font-size: 15px;
   line-height: 1.4;
   padding-bottom: 6px;
+  color: #444;
 }
 
 .App code {
-  padding: 1px 4px;
-  background-color: #eee;
+  padding: 1px 6px;
+  background-color: #fee;
   border-radius: 3px;
   margin: 0 2px;
   display: inline-block;
-  min-width: 30px;
+  min-width: 12px;
+  min-height: 4px;
+  font-family: 'Overpass Mono','Lucida Sans Typewriter', monospace;
+  font-size: 14px;
 }
 
 .App input {
-  padding: 6px 20px;
+  padding: 6px;
+  margin: 30px 0 10px 0;
+  font-size: 24px;
+  font-weight: 700;
+  border: none;
+  border-bottom: 1px solid #333;
+  width: calc(100% - 12px);
+  /* background-color: #fee; */
 }

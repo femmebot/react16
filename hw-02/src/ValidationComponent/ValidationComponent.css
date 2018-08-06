@@ -1,0 +1,21 @@
+.ValidationComponent {
+  margin-bottom: 40px;
+  display: block;
+}
+.ValidationComponent p {
+  padding: 6px;
+  display: inline-block;
+  font-size: 12px;
+  margin: 0;
+  background-color: #fee;
+}
+.ValidationComponent:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: 20px;
+  border-bottom: 20px solid #fee;
+  border-left: 20px solid transparent;
+  /* border-right: 60px solid transparent; */
+}

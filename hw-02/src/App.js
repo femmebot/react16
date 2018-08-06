@@ -3,12 +3,13 @@ import './App.css';
 
 import UserInput from './UserInput/UserInput';
 import UserOutput from './UserOutput/UserOutput';
+import ValidationComponent from './ValidationComponent/ValidationComponent';
 
 
 class App extends Component {
 
   state = {
-    textString: ''
+    textString: 'Hello'
   }
 
   inputChangedHandler = (event) => {
@@ -43,6 +44,8 @@ class App extends Component {
 
         <UserInput
           changed = {this.inputChangedHandler}
+          currentString = {this.state.textString}/>
+        <ValidationComponent
           currentString = {this.state.textString}/>
         <UserOutput
           currentString = {this.state.textString}/>
