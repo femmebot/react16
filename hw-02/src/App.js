@@ -21,12 +21,10 @@ class App extends Component {
   }
 
   removeCharacterHandler = (charIndex) => {
-
     const text = this.state.textString.split('');
     text.splice(charIndex, 1);
     const updatedText = text.join('');
     this.setState({textString: updatedText});
-
   }
 
   render() {
