@@ -4,21 +4,28 @@ import './App.css';
 import UserInput from './UserInput/UserInput';
 import UserOutput from './UserOutput/UserOutput';
 import ValidationComponent from './ValidationComponent/ValidationComponent';
+import CharComponent from './CharComponent/CharComponent';
+
 
 
 class App extends Component {
 
   state = {
-    textString: 'Hello'
+    textString: 'Hello!'
   }
 
   inputChangedHandler = (event) => {
     this.setState({
       textString: event.target.value
-    })
+    });
   }
 
   render() {
+
+    let charArray = this.state.textString.split('').map(ch => {
+      return <CharComponent character = {ch} />;
+    });
+
     return (
       <div className="App">
         <ol>
@@ -32,7 +39,7 @@ class App extends Component {
             Inside the ValidationComponent, either output "Text too short" of "Text acceptable length". E.g. take 5 as a minimum length.
           </li>
           <li>
-            Create another component (=> <code>CharComponent</code>) and style it as an inline box (=> <code>display: padding: 16px</code>, <code>text-align: center</code>, <code>margin: 16px</code>, <code>border: 1px solid #000</code>).
+            Create another component (=> <code>CharComponent</code>) and style it as an inline box (=> <code>display: inline-block</code>, <code>padding: 16px</code>, <code>text-align: center</code>, <code>margin: 16px</code>, <code>border: 1px solid #000</code>).
           </li>
           <li>
             Render a list of CharComponents where each CharComponent receives a different letter of the entered text (in the initial input field) as a prop.
@@ -49,6 +56,8 @@ class App extends Component {
           currentString = {this.state.textString}/>
         <UserOutput
           currentString = {this.state.textString}/>
+
+        {charArray}
 
       </div>
     );

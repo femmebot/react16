@@ -1,26 +1,22 @@
 import React from 'react';
 import './ValidationComponent.css';
 
-const ValidationComponent = (props) => {
-  let stringLength = props.currentString.length;
-  if (stringLength < 5) {
-    return (
-      <div className="ValidationComponent">
-        <p>
-          Text is too short.
-        </p>
-      </div>
+const validationComponent = (props) => {
 
-    )} else {
-      return (
-        <div className="ValidationComponent">
-          <p>
-            Text is an acceptable length!
-          </p>
-        </div>
-      )
-    }
+  let validationMessage = "Text is an acceptable length!"
 
+  if (props.currentString.length <= 5) {
+    validationMessage = "Text is too short."
+  }
+
+  return (
+    <div className="ValidationComponent">
+      <p>
+        {validationMessage}
+      </p>
+    </div>
+  )
+  
 };
 
-export default ValidationComponent;
+export default validationComponent;
