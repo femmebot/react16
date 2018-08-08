@@ -9,13 +9,17 @@ class App extends Component {
       { id: 2, name: "Manu", age: 29 },
       { id: 3, name: "Stephanie", age: 26 }
     ],
-    showPerson: false
+    showPerson: false,
+    showPersonButtonLabel: "Show People"
   }
 
   togglePersonHandler = () => {
     const doesShow = this.state.showPerson;
     this.setState({showPerson: !doesShow});
-    console.log("clicked!");
+    doesShow ?
+      this.setState.showPersonButtonLabel = "Show People"
+    : this.setState.showPersonButtonLabel = "Hide People";
+
   }
 
   nameChangedHandler = (event, id) => {
@@ -71,7 +75,8 @@ class App extends Component {
       borderRadius: '3px',
       border: 'none',
       padding: '6px 12px 8px 12px',
-      fontSize: '14px'
+      fontSize: '14px',
+      width: '120px'
     };
 
     let persons = null;
@@ -98,7 +103,7 @@ class App extends Component {
         <h1 className="App-title">Welcome to React</h1>
         <button
           style={buttonStyle}
-          onClick={this.togglePersonHandler}>Toggle Persons
+          onClick={this.togglePersonHandler}>{this.state.showPersonButtonLabel}
         </button>
 
         {persons}
