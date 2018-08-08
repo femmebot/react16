@@ -16,10 +16,11 @@ class App extends Component {
   togglePersonHandler = () => {
     const doesShow = this.state.showPerson;
     this.setState({showPerson: !doesShow});
+    // doesShow ? this.setState.showPersonButtonLabel = "Show People" : this.setState.showPersonButtonLabel = "Hide People";
     doesShow ?
-      this.setState.showPersonButtonLabel = "Show People"
-    : this.setState.showPersonButtonLabel = "Hide People";
-
+      this.setState({showPersonButtonLabel: "Show People"})
+    :
+      this.setState({showPersonButtonLabel: "Hide People"})
   }
 
   nameChangedHandler = (event, id) => {
