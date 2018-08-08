@@ -5,9 +5,9 @@ import Person from './Person/Person';
 class App extends Component {
   state = {
     persons: [
-      { id: '001', name: "Maximilian", age: 28 },
-      { id: '002', name: "Manu", age: 29 },
-      { id: '003', name: "Stephanie", age: 26 }
+      { id: 1, name: "Maximilian", age: 28 },
+      { id: 2, name: "Manu", age: 29 },
+      { id: 3, name: "Stephanie", age: 26 }
     ],
     showPerson: false
   }
@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   nameChangedHandler = (event, id) => {
-    // alternatively, if using index instead of ID, you can use findIndex()
+    // alternatively, if using ID instead of index, you can use find()
     // return only if true
     const personIndex = this.state.persons.findIndex( p => {
       return p.id === id;
@@ -32,8 +32,8 @@ class App extends Component {
 
     person.name = event.target.value;
 
-    const persons = [...this.state.persons];
-    persons[personIndex] = person;
+    const personsCopy = [...this.state.persons];
+    personsCopy[personIndex] = person;
 
     // this.setState({
     //   persons: [
@@ -45,7 +45,7 @@ class App extends Component {
 
     // now we can rewrite the above
     this.setState({
-      persons: persons
+      persons: personsCopy
     });
   }
 
@@ -56,10 +56,10 @@ class App extends Component {
     // const persons = this.state.persons.slice;
 
     // ES6 method preferred using the Spread operator
-    const persons = [...this.state.persons];
+    const personsCopy = [...this.state.persons];
 
-    persons.splice(personIndex, 1);
-    this.setState({persons: persons});
+    personsCopy.splice(personIndex, 1);
+    this.setState({persons: personsCopy});
   }
 
   // bind method preferred over passing anonymous function for performance
