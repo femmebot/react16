@@ -20,7 +20,7 @@ class App extends Component {
     doesShow ?
       this.setState({showPersonButtonLabel: "Show People"})
     :
-      this.setState({showPersonButtonLabel: "Hide People"})
+      this.setState({showPersonButtonLabel: "Hide People"});
   }
 
   nameChangedHandler = (event, id) => {
