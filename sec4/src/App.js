@@ -55,7 +55,7 @@ class App extends Component {
   }
 
   deletePersonHandler = (personIndex) => {
-    console.log('delete handler clicked');
+    // console.log('delete handler clicked');
 
     // slice makes a copy of the original array
     // const persons = this.state.persons.slice;
@@ -77,6 +77,7 @@ class App extends Component {
       border: 'none',
       padding: '6px 12px 8px 12px',
       fontSize: '14px',
+      color: '#000',
       width: '120px'
     };
 
@@ -97,11 +98,25 @@ class App extends Component {
           }
         </div>
       );
+      buttonStyle.backgroundColor = '#e50';
+      buttonStyle.color = "#fff";
+    }
+
+    const classes = [];
+
+    if (this.state.persons.length <= 2) {
+      classes.push('red');
+    }
+    if (this.state.persons.length <= 1) {
+      classes.push('allcaps');
     }
 
     return (
       <div className="App">
         <h1 className="App-title">Welcome to React</h1>
+        <p className={classes.join(' ')}>
+          This is really working!
+        </p>
         <button
           style={buttonStyle}
           onClick={this.togglePersonHandler}>{this.state.showPersonButtonLabel}
