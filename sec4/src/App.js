@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -119,19 +119,20 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <h1 className="App-title">Welcome to React</h1>
-        <p className={classes.join(' ')}>
-          This is really working!
-        </p>
-        <button
-          style={buttonStyle}
-          onClick={this.togglePersonHandler}>{this.state.showPersonButtonLabel}
-        </button>
+      <StyleRoot>
+        <div className="App">
+          <h1 className="App-title">Welcome to React</h1>
+          <p className={classes.join(' ')}>
+            This is really working!
+          </p>
+          <button
+            style={buttonStyle}
+            onClick={this.togglePersonHandler}>{this.state.showPersonButtonLabel}
+          </button>
+          {persons}
+        </div>
+      </StyleRoot>
 
-        {persons}
-
-      </div>
     );
 
     // using conditional with ternary expression
