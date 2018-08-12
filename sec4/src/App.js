@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium, { StyleRoot } from 'radium';
+// import Radium, { StyleRoot } from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -79,10 +79,10 @@ class App extends Component {
       padding: '6px 12px 8px 12px',
       fontSize: '14px',
       color: '#000',
-      width: '120px',
-      ':hover': {
-        backgroundColor: '#0cf'
-      }
+      width: '120px'
+      // ':hover': {
+      //   backgroundColor: '#0cf'
+      // }
     };
 
     let persons = null;
@@ -104,9 +104,9 @@ class App extends Component {
       );
       buttonStyle.backgroundColor = '#e50';
       buttonStyle.color = "#fff";
-      buttonStyle[':hover'] = {
-        backgroundColor: '#c00'
-      }
+      // buttonStyle[':hover'] = {
+      //   backgroundColor: '#c00'
+      // }
     }
 
     const classes = [];
@@ -119,21 +119,35 @@ class App extends Component {
     }
 
     return (
-      <StyleRoot>
-        <div className="App">
-          <h1 className="App-title">Welcome to React</h1>
-          <p className={classes.join(' ')}>
-            This is really working!
-          </p>
-          <button
-            style={buttonStyle}
-            onClick={this.togglePersonHandler}>{this.state.showPersonButtonLabel}
-          </button>
-          {persons}
-        </div>
-      </StyleRoot>
-
+      <div className="App">
+        <h1 className="App-title">Welcome to React</h1>
+        <p className={classes.join(' ')}>
+          This is really working!
+        </p>
+        <button
+          style={buttonStyle}
+          onClick={this.togglePersonHandler}>{this.state.showPersonButtonLabel}
+        </button>
+        {persons}
+      </div>
     );
+
+// using Radium for styles
+    // return (
+    //   <StyleRoot>
+    //     <div className="App">
+    //       <h1 className="App-title">Welcome to React</h1>
+    //       <p className={classes.join(' ')}>
+    //         This is really working!
+    //       </p>
+    //       <button
+    //         style={buttonStyle}
+    //         onClick={this.togglePersonHandler}>{this.state.showPersonButtonLabel}
+    //       </button>
+    //       {persons}
+    //     </div>
+    //   </StyleRoot>
+    // );
 
     // using conditional with ternary expression
 
@@ -169,4 +183,6 @@ class App extends Component {
   }
 }
 
-export default Radium(App);
+export default App;
+
+// export default Radium(App);
