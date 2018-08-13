@@ -72,20 +72,21 @@ class App extends Component {
   // <button onClick={this.switchNameHandler.bind(this, 'Maximilian')}>Switch Name</button>
 
   render() {
-    const buttonStyle = {
-      backgroundColor: '#0BD',
-      borderRadius: '3px',
-      border: 'none',
-      padding: '6px 12px 8px 12px',
-      fontSize: '14px',
-      color: '#000',
-      width: '120px'
+    // const buttonStyle = {
+    //   backgroundColor: '#0BD',
+    //   borderRadius: '3px',
+    //   border: 'none',
+    //   padding: '6px 12px 8px 12px',
+    //   fontSize: '14px',
+    //   color: '#000',
+    //   width: '120px'
       // ':hover': {
       //   backgroundColor: '#0cf'
       // }
-    };
+    // };
 
     let persons = null;
+    let btnClass = null;
 
     if (this.state.showPerson) {
       persons = (
@@ -102,8 +103,11 @@ class App extends Component {
           }
         </div>
       );
-      buttonStyle.backgroundColor = '#e50';
-      buttonStyle.color = "#fff";
+
+      btnClass = styles.btnRed;
+
+      // buttonStyle.backgroundColor = '#e50';
+      // buttonStyle.color = "#fff";
       // buttonStyle[':hover'] = {
       //   backgroundColor: '#c00'
       // }
@@ -124,7 +128,7 @@ class App extends Component {
           This is really working!
         </p>
         <button
-          style={buttonStyle}
+          className={btnClass}
           onClick={this.togglePersonHandler}>{this.state.showPersonButtonLabel}
         </button>
         {persons}
