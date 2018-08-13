@@ -5,3 +5,10 @@
   margin: 10px 20px;
   padding: 25px 20px;
 }
+
+@media (min-width: 500px) {
+  .Person {
+    max-width: 450px;
+    margin: 10px auto;
+  }
+}
