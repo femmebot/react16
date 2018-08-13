@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import styles from './App.css';  // can be any name import style from webpack module
 // import Radium, { StyleRoot } from 'radium';
 import Person from './Person/Person';
 
@@ -110,16 +110,15 @@ class App extends Component {
     }
 
     const classes = [];
-
-    if (this.state.persons.length <= 2) {
-      classes.push('red');
+    if ( this.state.persons.length <= 2 ) {
+      classes.push ( styles.red );
     }
-    if (this.state.persons.length <= 1) {
-      classes.push('allcaps');
+    if ( this.state.persons.length <= 1 ) {
+      classes.push ( styles.allcaps );
     }
 
     return (
-      <div className="App">
+      <div className={styles.App}>
         <h1 className="App-title">Welcome to React</h1>
         <p className={classes.join(' ')}>
           This is really working!
