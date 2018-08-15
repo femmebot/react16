@@ -1,0 +1,14 @@
+.Person {
+  width: calc(100% - 80px);
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 10px 20px;
+  padding: 25px 20px;
+}
+
+@media (min-width: 600px) {
+  .Person {
+    max-width: 540px;
+    margin: 10px auto;
+  }
+}
