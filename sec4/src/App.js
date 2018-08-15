@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './App.css';  // can be any name import style from webpack module
 // import Radium, { StyleRoot } from 'radium';
 import Person from './Person/Person';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
   state = {
@@ -88,17 +89,21 @@ class App extends Component {
     let persons = null;
     let btnClass = null;
 
+    // alternative; use bind.this index method instead of anonymous function
+    // Note: Key must always be in the outermost element
+
     if (this.state.showPerson) {
       persons = (
         <div>
           {this.state.persons.map((person, index) => {
-              // alternative; use bind.this index method instead of anonymous function
-              return <Person
-                click = {() => this.deletePersonHandler(index)}
-                name = {person.name}
-                age = {person.age}
-                key = {person.id}
-                changed = {(event) => this.nameChangedHandler(event, person.id)}/>
+              return <ErrorBoundary key = {person.id}>
+                <Person
+                  click = {() => this.deletePersonHandler(index)}
+                  name = {person.name}
+                  age = {person.age}
+
+                  changed = {(event) => this.nameChangedHandler(event, person.id)}/>
+              </ErrorBoundary>
             })
           }
         </div>

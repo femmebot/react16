@@ -6,9 +6,9 @@
   padding: 25px 20px;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   .Person {
-    max-width: 450px;
+    max-width: 540px;
     margin: 10px auto;
   }
 }
