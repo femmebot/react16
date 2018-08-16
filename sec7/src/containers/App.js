@@ -52,7 +52,6 @@ class App extends Component {
   render() {
 
     let persons = null;
-    let btnClass = null;
 
     if (this.state.showPerson) {
       persons = <Persons
@@ -60,18 +59,8 @@ class App extends Component {
         clicked = {this.deletePersonHandler}
         changed = {this.nameChangedHandler}/>
       ;
-
-      // btnClass = styles.btnRed;
-
     }
 
-    // const classes = [];
-    // if ( this.state.persons.length <= 2 ) {
-    //   classes.push ( styles.red );
-    // }
-    // if ( this.state.persons.length <= 1 ) {
-    //   classes.push ( styles.allcaps );
-    // }
 
     return (
       <div className={styles.App}>

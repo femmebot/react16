@@ -5,7 +5,6 @@ const cockpit = (props) => {
 
   const assignedClasses = [];
   let btnClass = null;
-  let showPerson = false;
   let showPersonButtonLabel = "Show People";
 
   if (props.showPerson) {
