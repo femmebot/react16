@@ -17,10 +17,6 @@ class App extends Component {
   togglePersonHandler = () => {
     const doesShow = this.state.showPerson;
     this.setState({showPerson: !doesShow});
-    doesShow ?
-      this.setState({showPersonButtonLabel: "Show People"})
-    :
-      this.setState({showPersonButtonLabel: "Hide People"});
   }
 
   nameChangedHandler = (event, id) => {
@@ -61,10 +57,10 @@ class App extends Component {
       ;
     }
 
-
     return (
       <div className={styles.App}>
         <Cockpit
+          title = {this.props.pageTitle}
           showPerson = {this.state.showPerson}
           persons = {this.state.persons}
           clicked = {this.togglePersonHandler}/>
