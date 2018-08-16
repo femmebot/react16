@@ -5,8 +5,8 @@ const cockpit = (props) => {
 
   const assignedClasses = [];
   let btnClass = null;
-  let showPerson: false;
-  let showPersonButtonLabel: "Show People";
+  let showPerson = false;
+  let showPersonButtonLabel = "Show People";
 
   if (props.showPerson) {
     btnClass = styles.btnRed;
@@ -25,7 +25,7 @@ const cockpit = (props) => {
 
   return(
     <div className={styles.Cockpit}>
-      <h1>Hi! I’m a React app!</h1>
+      <h1>React App / Sec 7</h1>
       <p className={assignedClasses.join(' ')}>
         This is really working!
       </p>
