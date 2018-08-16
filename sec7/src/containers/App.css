@@ -3,48 +3,6 @@
   margin: 30px auto;
 }
 
-.App-title {
-  font-size: 3em;
-  letter-spacing: -.015em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-.App button {
-  background-color: #0BD;
-  border-radius: 3px;
-  border: none;
-  padding: 6px 12px 8px 12px;
-  font-size: 14px;
-  color: #000;
-  width: 120px;
-  cursor: pointer;
-}
-
-.App button:hover {
-  background-color: #0cf;
-}
-
-.App button.btnRed {
-  background-color: #e50;
-  color: #fff;
-}
-
-.App button.btnRed:hover {
-  background-color: #c00;
-}
-
 p {
   font-size: 12px;
-}
-
-.red {
-  color: #f00;
-}
-
-.allcaps {
-  text-transform: uppercase;
-  font-weight: 700;
 }

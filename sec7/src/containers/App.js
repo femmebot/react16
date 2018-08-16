@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './App.css';  // can be any name import style from webpack module
 import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
   state = {
@@ -54,37 +55,30 @@ class App extends Component {
     let btnClass = null;
 
     if (this.state.showPerson) {
-      persons = (
-        <div>
-          <Persons
-            persons = {this.state.persons}
-            clicked = {this.deletePersonHandler}
-            changed = {this.nameChangedHandler}/>
-        </div>
-      );
+      persons = <Persons
+        persons = {this.state.persons}
+        clicked = {this.deletePersonHandler}
+        changed = {this.nameChangedHandler}/>
+      ;
 
-      btnClass = styles.btnRed;
+      // btnClass = styles.btnRed;
 
     }
 
-    const classes = [];
-    if ( this.state.persons.length <= 2 ) {
-      classes.push ( styles.red );
-    }
-    if ( this.state.persons.length <= 1 ) {
-      classes.push ( styles.allcaps );
-    }
+    // const classes = [];
+    // if ( this.state.persons.length <= 2 ) {
+    //   classes.push ( styles.red );
+    // }
+    // if ( this.state.persons.length <= 1 ) {
+    //   classes.push ( styles.allcaps );
+    // }
 
     return (
       <div className={styles.App}>
-        <h1 className="App-title">Welcome to React</h1>
-        <p className={classes.join(' ')}>
-          This is really working!
-        </p>
-        <button
-          className={btnClass}
-          onClick={this.togglePersonHandler}>{this.state.showPersonButtonLabel}
-        </button>
+        <Cockpit
+          showPerson = {this.state.showPerson}
+          persons = {this.state.persons}
+          clicked = {this.togglePersonHandler}/>
         {persons}
       </div>
     );
