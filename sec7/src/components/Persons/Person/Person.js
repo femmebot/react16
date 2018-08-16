@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import React from 'react';
 import styles from './Person.css';
 
 class Person extends Component {
@@ -13,6 +14,24 @@ class Person extends Component {
       </div>
     )
   }
+
+
+
 };
 
+// const person = (props) => {
+//
+//   return (
+//     <div className={styles.Person}>
+//       <p onClick={props.click}>I am {props.name} and I am {props.age} years old!</p>
+//       <p>{props.children}</p>
+//       <input type="text"
+//         onChange={props.changed}
+//         value={props.name}/>
+//     </div>
+//   )
+//
+// };
+
 export default Person;
+// export default person;
