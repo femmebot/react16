@@ -9,9 +9,9 @@ const cockpit = (props) => {
 
   if (props.showPerson) {
     btnClass = styles.btnRed;
-    showPersonButtonLabel = "Show People";
-  } else {
     showPersonButtonLabel = "Hide People";
+  } else {
+    showPersonButtonLabel = "Show People";
   }
 
   if ( props.persons.length <= 2 ) {
