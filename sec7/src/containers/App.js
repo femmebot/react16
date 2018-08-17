@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './App.css';  // can be any name import style from webpack module
-import Persons from '../components/Persons/Persons';
-import Cockpit from '../components/Cockpit/Cockpit';
+import Users from '../components/Users/Users';
+import Dashboard from '../components/Dashboard/Dashboard';
 
 class App extends Component {
 
@@ -22,7 +22,8 @@ class App extends Component {
     persons: [
       { id: 1, name: "Maximilian", age: 28 },
       { id: 2, name: "Manu", age: 29 },
-      { id: 3, name: "Stephanie", age: 26 }
+      { id: 3, name: "Stephanie", age: 26 },
+      { id: 4, name: "Madonna", age: 60 }
     ],
     showPerson: false,
     showPersonButtonLabel: "Show People"
@@ -66,7 +67,7 @@ class App extends Component {
     let persons = null;
 
     if (this.state.showPerson) {
-      persons = <Persons
+      persons = <Users
         persons = {this.state.persons}
         clicked = {this.deletePersonHandler}
         changed = {this.nameChangedHandler}/>
@@ -75,7 +76,7 @@ class App extends Component {
 
     return (
       <div className={styles.App}>
-        <Cockpit
+        <Dashboard
           title = {this.props.pageTitle}
           showPerson = {this.state.showPerson}
           persons = {this.state.persons}

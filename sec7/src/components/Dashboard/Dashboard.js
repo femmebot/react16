@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Cockpit.css';
+import styles from './Dashboard.css';
 
 const cockpit = (props) => {
 
@@ -23,7 +23,7 @@ const cockpit = (props) => {
 
 
   return(
-    <div className={styles.Cockpit}>
+    <div className={styles.Dashboard}>
       <h1>{props.title}</h1>
       <p className={assignedClasses.join(' ')}>
         This is really working!
