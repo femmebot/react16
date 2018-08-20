@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+// import React, { Component } from 'react';
 // import React from 'react';
 import Person from './Person/Person';
 
-class Users extends Component {
+class Users extends PureComponent {
+// class Users extends Component {
 
   constructor(props) {
     super(props);
@@ -21,10 +23,12 @@ class Users extends Component {
     console.log('[UPDATE Users.js] Inside componentWillReceiveProps', nextProps);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('[UPDATE User.js] Inside shouldComponentUpdate', nextProps, nextState);
-    return nextProps.persons.age !== this.props.persons;  // return true or false to specify whether to update DOM
-  }
+// instead of Component, import PureComponent which already has this check built in
+// use Pure Component only if you know page updates may not be required
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log('[UPDATE User.js] Inside shouldComponentUpdate', nextProps, nextState);
+  //   return nextProps.persons.age !== this.props.persons;  // return true or false to specify whether to update DOM
+  // }
 
   componentWillUpdate(nextProps, nextState) {
     console.log('[UPDATE User.js] Inside componentWillUpdate', nextProps, nextState);

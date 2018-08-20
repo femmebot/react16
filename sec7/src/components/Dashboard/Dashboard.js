@@ -1,14 +1,17 @@
 import React from 'react';
 import styles from './Dashboard.css';
+import Aux from '../../hoc/Aux';
 
 const cockpit = (props) => {
 
   const assignedClasses = [];
-  let btnClass = null;
+  let btnClass = styles.Button;
+  // let btnClass = null;
   let showPersonButtonLabel = "Show People";
 
   if (props.showPerson) {
-    btnClass = styles.btnRed;
+    btnClass = [styles.Button, styles.btnRed].join(' ');
+    //     btnClass = styles.btnRed;
     showPersonButtonLabel = "Hide People";
   } else {
     showPersonButtonLabel = "Show People";
@@ -23,7 +26,8 @@ const cockpit = (props) => {
 
 
   return(
-    <div className={styles.Dashboard}>
+    // <div className={styles.Dashboard}>
+    <Aux>
       <h1>{props.title}</h1>
       <p className={assignedClasses.join(' ')}>
         This is really working!
@@ -32,7 +36,8 @@ const cockpit = (props) => {
         className={btnClass}
         onClick={props.clicked}>{showPersonButtonLabel}
       </button>
-    </div>
+    </Aux>
+    // </div>
   );
 
 };

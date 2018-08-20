@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+// import React, { Component } from 'react';
 import styles from './App.css';  // can be any name import style from webpack module
 import Users from '../components/Users/Users';
 import Dashboard from '../components/Dashboard/Dashboard';
 
-class App extends Component {
+class App extends PureComponent {
+// class App extends Component {
 
   constructor(props) {
     super(props);
@@ -18,10 +20,10 @@ class App extends Component {
     console.log('[App.js] Inside componentDidMount');
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('[UPDATE App.js] Inside shouldComponentUpdate', nextProps, nextState);
-    return true;
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log('[UPDATE App.js] Inside shouldComponentUpdate', nextProps, nextState);
+  //   return true;
+  // }
 
   componentWillUpdate(nextProps, nextState) {
     console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
@@ -96,6 +98,7 @@ class App extends Component {
           clicked = {this.togglePersonHandler}/>
         {persons}
       </div>
+
     );
 
   }

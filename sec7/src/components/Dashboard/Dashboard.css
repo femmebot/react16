@@ -1,4 +1,5 @@
-.Dashboard button {
+/* .Dashboard button { */
+.Button {
   background-color: #0BD;
   border-radius: 3px;
   border: none;
@@ -9,16 +10,19 @@
   cursor: pointer;
 }
 
-.Dashboard button:hover {
+/* .Dashboard button:hover { */
+.Button:hover {
   background-color: #0cf;
 }
 
-.Dashboard button.btnRed {
+/* .Dashboard button.btnRed { */
+.Button.btnRed {
   background-color: #e50;
   color: #fff;
 }
 
-.Dashboard button.btnRed:hover {
+/* .Dashbaord button.btnRed:hover { */
+.Button.btnRed:hover {
   background-color: #c00;
 }
 
