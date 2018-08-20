@@ -42,12 +42,21 @@ class App extends PureComponent {
       { id: 4, name: "Madonna", age: 60 }
     ],
     showPerson: false,
-    showPersonButtonLabel: "Show People"
+    showPersonButtonLabel: "Show People",
+    toggleClicked: 0
   }
 
   togglePersonHandler = () => {
     const doesShow = this.state.showPerson;
-    this.setState({showPerson: !doesShow});
+    // this.setState({showPerson: !doesShow});
+
+    // best practice preferred functional syntax for mutating state because setState runs async
+    this.setState( ( previousState, props ) => {
+        return {
+          showPerson: !doesShow,
+          toggleClicked: previousState.toggleClicked + 1
+        }
+      });
   }
 
   nameChangedHandler = (event, id) => {
@@ -91,16 +100,16 @@ class App extends PureComponent {
     }
 
     return (
-      // <WithClass styles={styles.App}>
-      <div className={styles.App}>
+      <WithClass styles={styles.App}>
+      // <div className={styles.App}>
         <Dashboard
           title = {this.props.pageTitle}
           showPerson = {this.state.showPerson}
           persons = {this.state.persons}
           clicked = {this.togglePersonHandler}/>
         {persons}
-      </div>
-      // </WithClass>
+      // </div>
+      </WithClass>
 
     );
 
