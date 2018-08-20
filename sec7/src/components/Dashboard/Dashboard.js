@@ -27,6 +27,8 @@ const cockpit = (props) => {
 
   return(
     // <div className={styles.Dashboard}>
+    // React 16.2 supports Fragments using empty JSX tags
+    // <>
     <Aux>
       <h1>{props.title}</h1>
       <p className={assignedClasses.join(' ')}>
@@ -37,6 +39,7 @@ const cockpit = (props) => {
         onClick={props.clicked}>{showPersonButtonLabel}
       </button>
     </Aux>
+    // </>
     // </div>
   );
 

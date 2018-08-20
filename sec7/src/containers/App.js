@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 import styles from './App.css';  // can be any name import style from webpack module
 import Users from '../components/Users/Users';
 import Dashboard from '../components/Dashboard/Dashboard';
+import WithClass from '../hoc/WithClass';
 
 class App extends PureComponent {
 // class App extends Component {
@@ -90,6 +91,7 @@ class App extends PureComponent {
     }
 
     return (
+      // <WithClass styles={styles.App}>
       <div className={styles.App}>
         <Dashboard
           title = {this.props.pageTitle}
@@ -98,6 +100,7 @@ class App extends PureComponent {
           clicked = {this.togglePersonHandler}/>
         {persons}
       </div>
+      // </WithClass>
 
     );
 
