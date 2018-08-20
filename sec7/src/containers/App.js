@@ -100,16 +100,16 @@ class App extends PureComponent {
     }
 
     return (
-      <WithClass styles={styles.App}>
       // <div className={styles.App}>
+      <WithClass styles={styles.App}>
         <Dashboard
           title = {this.props.pageTitle}
           showPerson = {this.state.showPerson}
           persons = {this.state.persons}
           clicked = {this.togglePersonHandler}/>
         {persons}
-      // </div>
       </WithClass>
+      // </div>
 
     );
 
