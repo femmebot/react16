@@ -52,11 +52,13 @@ class Person extends Component {
 //
 // };
 
+// declare prop types
+// see available PropTypes https://reactjs.org/docs/typechecking-with-proptypes.html
 Person.propTypes = {
   click: PropTypes.func,
   name: PropTypes.string,
   age: PropTypes.number,
-  changed: PropTypes.func 
+  changed: PropTypes.func
 };
 
 export default Person;
