@@ -13,6 +13,7 @@ class App extends PureComponent {
     console.log('[App.js] Inside Constructor', props);
   }
 
+  // discouraged legacy lifecycle hook
   componentWillMount() {
     console.log('[App.js] Inside componentWillMount()');
   }
@@ -26,8 +27,27 @@ class App extends PureComponent {
   //   return true;
   // }
 
+  // discouraged legacy lifecycle hook
   componentWillUpdate(nextProps, nextState) {
-    console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
+    console.log(
+      '[UPDATE App.js] Inside componentWillUpdate',
+      nextProps,
+      nextState
+    );
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log(
+      '[UPDATE App.js] Inside getDerivedStateFromProps',
+      nextProps,
+      nextState
+    );
+
+    return prevState;
+  }
+
+  getSnapshotBeforeUpdate() {
+    console.log('[UPDATE App.js] Inside getSnapshotBeforeUpdate');
   }
 
   componentDidUpdate() {
