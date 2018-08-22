@@ -40,12 +40,13 @@ class App extends PureComponent {
     console.log(
       '[UPDATE App.js] Inside getDerivedStateFromProps',
       nextProps,
-      nextState
+      prevState
     );
 
     return prevState;
   }
 
+  // useful for getting scroll position before update for example
   getSnapshotBeforeUpdate() {
     console.log('[UPDATE App.js] Inside getSnapshotBeforeUpdate');
   }
