@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Dashboard.css';
 import Aux from '../../hoc/Aux';
 
-const cockpit = (props) => {
+const dashboard = (props) => {
 
   const assignedClasses = [];
   let btnClass = styles.Button;
@@ -45,4 +45,4 @@ const cockpit = (props) => {
 
 };
 
-export default cockpit;
+export default dashboard;
