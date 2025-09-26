@@ -5,7 +5,7 @@
   "dependencies": {
     "build": "^0.1.4",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react-dom": "^16.4.2",
     "react-scripts": "5.0.1"
   },
   "scripts": {
