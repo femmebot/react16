@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "build": "^0.1.4",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {
